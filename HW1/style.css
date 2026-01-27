@@ -1,0 +1,135 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("imgs/light-purple-pink.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+@media (max-width: 865px) {
+    .theme_container {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 865px) {
+    .aboutme_container {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 865px) {
+    .funfacts_container {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 865px) {
+    .hero {
+        min-height: 730px;
+    }
+}
+
+.hero {
+    height: 100vh;
+    min-height: 740px;
+    background-image: url("imgs/Mario-Kart-PNG.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 10px rgba(79, 65, 68, 0.8);
+}
+
+.title {
+    font-size: 22pt;
+    color: #fff;
+    float: left;
+    margin-top: 100px;
+    margin-left: 12em;
+    margin-right: 5em;
+    padding: 2em;
+    text-align: center;
+    background-color: rgba(215, 43, 187, 0.7);
+}
+
+.title h1 {
+    font-family:"Slackey", sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 0.2em;
+}
+
+.title h2 {
+    font-family: 'Stylish', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 0.5em;
+}
+
+
+.theme_container {
+    min-height: 40vh;
+    font-size: 2em;
+}
+
+.description {
+    margin: 25vh auto;
+    padding: 1em;
+    text-align: center;
+    width: 75%;
+    min-width: 300px;
+    background-color: rgba(255, 200, 248, 0.8);
+
+}
+
+.description h1 {
+    font-family: "Slackey", sans-serif;
+}
+
+.aboutme_container {
+    min-height: 40vh;
+    font-size: 2em;
+}
+
+.description_2 {
+    margin: 25vh auto;
+    padding: 1em;
+    text-align: center;
+    width: 75%;
+    min-width: 300px;
+    background-color: rgba(255, 200, 248, 0.8);
+
+}
+
+.description_2 h1 {
+    font-family: "Slackey", sans-serif;
+}
+
+.funfacts_container {
+    min-height: 40vh;
+    font-size: 2em;
+}
+
+.description_3 {
+    margin: 25vh auto;
+    padding: 1em;
+    text-align: center;
+    width: 75%;
+    min-width: 300px;
+    background-color: rgba(255, 200, 248, 0.8);
+
+}
+
+.description_3 h1 {
+    font-family: "Slackey", sans-serif;
+}
+
+
+
+
+
+
+
