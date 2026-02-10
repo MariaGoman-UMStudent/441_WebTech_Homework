@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Own Adventure</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="heading">
+        <h1>Discover Your Power</h1>
+    </div>
+    <div id="story">
+        <p id="story-text">You wake up in a dark forest. Suddenly, you see three pathways light up in front of you. Which one will you take?</p>
+        <button class="choice-btn" onclick="makeChoice('left')">Take the left path</button>
+        <button class="choice-btn" onclick="makeChoice('middle')">Take the middle path</button>
+        <button class="choice-btn" onclick="makeChoice('right')">Take the right path</button>
+    </div>
+
+    <script>
+        // The beginning of the story
+        let storyText = "You wake up in a dark forest. Suddenly, you see three pathways light up in front of you. Which one will you take?";
+
+        // Function to update the choices
+        function updateStory(newText, leftChoice, middleChoice, rightChoice) {
+            document.getElementById("story-text").innerHTML = newText;
+            const buttons = document.querySelectorAll(".choice-btn");
+
+            if (leftChoice) {
+                buttons[0].style.display = "inline-block";
+                buttons[0].onclick = () => makeChoice(leftChoice);
+            } else {
+                buttons[0].style.display = "none";
+            }
+
+            if (middleChoice) {
+                buttons[1].style.display = "inline-block";
+                buttons[1].onclick = () => makeChoice(middleChoice);
+            } else {
+                buttons[1].style.display = "none";
+            }
+
+            if (rightChoice) {
+                buttons[2].style.display = "inline-block";
+                buttons[2].onclick = () => makeChoice(rightChoice);
+            } else {
+                buttons[2].style.display = "none";
+            }
+        }
+
+        // Function to handle and pick the player's next choices
+        function makeChoice(choice) {
+            if (choice === "left") {
+                storyText = "You take the left path and soon come across a wild bear. It's staring at you! What will you do?";
+                updateStory(storyText, "fight", "run", null);
+            } else if (choice === "middle") {
+                storyText = "You take the middle path and find a beautiful waterfall. But there's a cave behind it. Will you explore the cave?";
+                updateStory(storyText, "enter the cave", "stay outside", null);
+            } else if (choice === "right") {
+                storyText = "You take the right path and there is a huge boulder blocking your way. What will you do?";
+                updateStory(storyText, "make a wish for the boulder to go away", "run into it", null);
+            } else if (choice === "fight") {
+                storyText = "You decide to fight the bear and realize you have \<b>superhuman strength</b>\.";
+                updateStory(storyText, null, null, null);
+            } else if (choice === "run") {
+                storyText = "You decide to run away from the bear. It chases you down and tries to eat you, but unfortunately the bear dies. You apparently have \<b>poison powers</b>\.";
+                updateStory(storyText, null, null, null);
+            } else if (choice === "enter the cave") {
+                storyText = "You enter inside the dark cave and discover that you have \<b>superhuman nightvision</b>\.";
+                updateStory(storyText, null, null, null);
+            } else if (choice === "stay outside") {
+                storyText = "You decide to stay outside and bathe in the waterfall. You discover that you can transform into a \<b>mermaid</b>\.";
+                updateStory(storyText, null, null, null);
+            } else if (choice === "make a wish for the boulder to go away") {
+                storyText = "You make a wish inside your mind for the boulder to go away and suddenly it is floating in the air. You realize that you have \<b>telekenesis</b>\.";
+                updateStory(storyText, null, null, null);
+            } else if (choice === "run into it") {
+                storyText = "Against any common sense, you decide to run through the boulder, only to find out that you can pass right through it without a scratch. You have \<b>intangibility powers</b>\.";
+                updateStory(storyText, null, null, null);
+            }
+        }
+    </script>
+</body>
+</html>
