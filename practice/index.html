@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Own Adventure</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Practice</h1>
+    <p>More practice...</p>
+
+    <button id="blue-btn" onclick="newButton()">lightblue </button>
+    <script>
+        function Pizza (){
+            document.querySelector("h1").innerHTML = "Pizza";
+        }
+        Pizza();
+        let bng = document.body;
+
+        function newButton (){
+            if(bng.style.backgroundColor === "white"){
+            document.body.style.backgroundColor = "lightblue";
+        }
+        else{
+            bng.style.backgroundColor = "white";
+            }
+        }
+
+        function cats() {
+            for(i=0; i < 5 ; i++){
+                alert("Meow");
+            }
+        }
+
+        cats();
+
+      
+
+
+        
+    </script>
+</body>
+</html>

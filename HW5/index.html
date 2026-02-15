@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Own Adventure</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="heading">
+        <h1 id ="title">Discover Your Power</h1>
+    </div>
+
+    <div id="story">
+        <div id="story-text">You wake up in a dark forest. Suddenly, you see three pathways light up in front of you (left, middle, right). Which one will you take?</div>
+        <input id="text-box" type = "text" placeholder="type answer here...">
+
+        <input id="submit" type ="button" value="submit" onclick="makeChoice()">
+        <input id="restart" type ="button" value="restart" onclick="gameOver()">
+        <span id= summary-text></span>
+    </div>
+
+    <img src="https://i.pinimg.com/474x/58/b6/e2/58b6e2e0fab7e7167349b727cf384c0d.jpg">
+    
+  
+
+
+    <script>
+        // "https://i.pinimg.com/736x/fd/e2/9d/fde29db52ead5e91e317c7988d509844.jpg" 
+        // Function to handle and pick the player's next choices
+
+        let og = document.body.innerHTML;
+
+        function storyContent (title, text, image, color){
+            document.getElementById("title").innerHTML = title;
+            document.getElementById("story-text").innerHTML = text;
+            document.querySelector("img").src = image;
+            document.getElementById("story-text").style.color = color;
+        }
+
+
+    // storyContent ("Powers", "story change", "https://i.pinimg.com/736x/fd/e2/9d/fde29db52ead5e91e317c7988d509844.jpg", "purple");
+
+        function fixText (anything){
+            return anything.trimEnd().toLowerCase(); 
+        }
+
+        let whateva = 0; 
+        let trackChoice = [];
+
+
+        function gameOver (){
+            whateva = 0;
+            trackChoice = [];
+            document.body.innerHTML = og;
+            document.body.style.backgroundColor = "";
+            document.getElementById("title").style.color = "black";
+
+        }
+
+
+
+        function summarize(){
+            let everything = "Your choices: ";
+            for(i = 0; i < trackChoice.length; i++){
+                everything += trackChoice[i];
+                if(i < trackChoice.length -1){
+                    everything += " , ";
+                }
+            }
+            return everything;
+        }
+
+       
+
+
+
+        function makeChoice(){
+            let message = fixText(document.getElementById("text-box").value);
+            document.getElementById("text-box").value="";
+
+            switch(whateva){
+                case 0: 
+                if(message === "left"){
+                    trackChoice.push("left");
+                    storyContent("Bearely making it", "You take the left path and soon come across a wild bear. It's staring at you! What will you do? Fight or run?","https://i.pinimg.com/736x/fd/e2/9d/fde29db52ead5e91e317c7988d509844.jpg");
+                    whateva++;
+                } else if(message === "middle"){
+                    trackChoice.push("middle");
+                    whateva = 2;
+                    storyContent("waterfall", "You take the middle path and find a beautiful waterfall. But there's a cave behind it. Will you explore the cave or stay outside?","https://png.pngtree.com/png-clipart/20230914/original/pngtree-waterfall-clipart-cartoon-waterfall-and-trees-isolated-on-white-vector-png-image_12150492.png");
+                   
+
+
+            } else if(message === "right"){
+                    trackChoice.push("right");
+                    storyContent("boulder", "You take the right path and there is a huge boulder blocking your way. What will you do? Make it disappear or run through it?","https://png.pngtree.com/png-clipart/20210309/original/pngtree-block-rock-clip-art-png-image_5830703.jpg", "#00008B");
+                    whateva = 3;
+        } else{
+            alert("Invalid choice. Try again.");
+            return;
+        }
+        
+        break;
+                case 1: 
+             if(message === "fight"){
+                    trackChoice.push("fight");
+                    storyContent("Superhuman strength", "You decide to fight the bear and realize you have \<b>superhuman strength</b>\.","https://upload.wikimedia.org/wikipedia/en/4/46/Toph_Beifong.png");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "#ff7071";
+                } else if(message === "run"){
+                    trackChoice.push("run");
+                    storyContent("Poison", "You decide to run away from the bear. It chases you down and tries to eat you, but unfortunately the bear dies. You apparently have \<b>poison powers</b>\.","https://upload.wikimedia.org/wikipedia/en/d/d4/BBD-Poison.jpg");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "#604B62";
+                    
+                } else{
+                    alert("invalid option, try again....."); 
+                    return;
+                }
+
+                     break;
+             case 2:
+                 if(message === "explore the cave"){
+                    trackChoice.push("explore");
+                    storyContent("Superhuman nightvision", "You enter inside the dark cave and discover that you have \<b>superhuman nightvision</b>\.","https://cdn.mos.cms.futurecdn.net/VejkKeZ9G7zWTVfSQQRTfa.jpg");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "black";
+                    document.getElementById("title").style.color = "green";
+                } else if(message === "stay outside"){
+                    trackChoice.push("outside");
+                    storyContent("Splish splash","You decide to stay outside and bathe in the waterfall. You discover that you can transform into a \<b>mermaid</b>\.","https://png.pngtree.com/png-clipart/20210929/ourmid/pngtree-mermaid-tail-watercolor-graffiti-png-image_3954780.png");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "blue";
+                    document.getElementById("title").style.color = "lightblue";
+                } else{
+                    alert("invalid option, try again....."); 
+                    return;
+                }
+                     whateva++;
+                     break;
+                case 3:
+                if(message === "make it disappear"){
+                    trackChoice.push("disappear");
+                    storyContent("Mind games", "You make a wish inside your mind for the boulder to go away and suddenly it is floating in the air. You realize that you have \<b>telekenesis</b>\.","https://hughstephensblog.net/wp-content/uploads/2021/04/caillou-clipart.png");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "yellow";
+                    document.getElementById("title").style.color = "black";
+                } else if(message === "run through it"){
+                    trackChoice.push("run through");
+                    storyContent("Not even phased","Against any common sense, you decide to run through the boulder, only to find out that you can pass right through it without a scratch. You have \<b>intangibility powers</b> ","https://static0.colliderimages.com/wordpress/wp-content/uploads/2022/05/Danny-Phantom.jpg");
+                    document.getElementById("summary-text").innerHTML="<br>Congratulations. Here's the reciept: <br>"+summarize();
+                    document.body.style.backgroundColor = "gray";
+                    document.getElementById("title").style.color = "#66ff00";
+                } else{
+                    alert("invalid option, try again....."); 
+                    return;
+                }
+                     whateva++;
+                     break;
+ 
+                
+
+
+
+    }
+}
+
+
+    </script>
+
+</body>
+</html>
