@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Bonbon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<h1>Welcome To A Cute Memory Game!</h1>
+
+<input type="text" id="firstName" placeholder="First Name">
+<input type="text" id="lastName" placeholder="Last Name">
+<input type="number" id="age" placeholder="Age">
+
+<button onclick="startGame()">Start Game</button>
+
+<script>
+function startGame()
+{
+    var first = document.getElementById("firstName").value.trim();
+    var last = document.getElementById("lastName").value.trim();
+    var age = document.getElementById("age").value;
+
+    if(first === "" || last === "" || age === "")
+    {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if(isNaN(age))
+    {
+        alert("Age must be a number.");
+        return;
+    }
+
+    var player = {
+        firstName: first,
+        lastName: last,
+        age: age,
+        attempts: 0
+    };
+
+    localStorage.setItem("player", JSON.stringify(player));
+
+    window.location.href = "game.html";
+}
+</script>
+</body>
+
+</html>

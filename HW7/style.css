@@ -1,0 +1,25 @@
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 650px;
+    margin: auto;
+}
+
+h1 {
+    font-family: Bonbon, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 60px;
+    color: rgb(254, 122, 179);
+    text-align: center;
+}
+
+#gameBoard img {
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+#gameBoard img:hover {
+    transform: scale(1.08);
+}

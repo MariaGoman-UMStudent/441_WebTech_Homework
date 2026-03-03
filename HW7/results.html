@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS External stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Bonbon&display=swap" rel="stylesheet">
+</head>
+<body onload="loadResults()">
+
+<h1>Game Results</h1>
+
+<p id="name"></p>
+<p id="age"></p>
+<p id="attempts"></p>
+
+<button onclick="playAgain()">Play Again</button>
+<button onclick="resetGame()">Reset</button>
+
+<script>
+function loadResults()
+{
+    var player = JSON.parse(localStorage.getItem("player"));
+
+    document.getElementById("name").innerHTML =
+        "Player: " + player.firstName + " " + player.lastName;
+
+    document.getElementById("age").innerHTML =
+        "Age: " + player.age;
+
+    document.getElementById("attempts").innerHTML =
+        "Total Attempts: " + player.attempts;
+}
+
+function playAgain()
+{
+    window.location.href = "game.html";
+}
+
+function resetGame()
+{
+    localStorage.clear();
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
