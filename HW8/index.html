@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disability Rights</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 0.6s ease;
+}
+
+.viewer{
+    width:600px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    border-radius:6px;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:15px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+h1{
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Disability Rights Viewer</h1>
+
+<div class="viewer">
+
+    <img id="slideImage" src="" alt="Slide Image">
+
+    <h2 id="slideTitle"></h2>
+
+    <p id="slideDescription"></p>
+
+    <p><strong>Author:</strong> <span id="slideAuthor"></span></p>
+
+    <p><strong>Year:</strong> <span id="slideYear"></span></p>
+
+    <button id="nextBtn">View Next Slide</button>
+
+</div>
+
+<script src="scripts/main.js" defer></script>
+
+</body>
+</html>
