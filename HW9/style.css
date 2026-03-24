@@ -1,0 +1,38 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, #1a0033, #000);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* IMAGE */
+#dreamImage {
+    position: absolute;
+    width: 250px;
+    top: 40%;
+    left: 40%;
+    display: none;
+    border-radius: 15px;
+}
+
+/* TEXT */
+#dreamText {
+    position: absolute;
+    font-size: 28px;
+    top: 20%;
+    left: 30%;
+    opacity: 0.9;
+}
+
+/* SHAPE */
+#shape {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: purple;
+    top: 60%;
+    left: 50%;
+}
