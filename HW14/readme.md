@@ -1,0 +1,1 @@
+I faced quite a few challenges with this assignment. I feel like I have everything setup correctly, but no matter how much I tried, I cant get the sprite to move and the stars to gravitate. I even used Gen AI to help with any debugging and it didnt do much help. I eventually just gave up, especially because I ran out of time to refine all the mistakes. 
