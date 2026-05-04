@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+
+#musicControls {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(10, 10, 30, 0.6);
+    padding: 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+}
+
+#musicControls button {
+    background: #1a1b3a;
+    color: white;
+    border: 1px solid #3a3b6a;
+    padding: 8px 10px;
+    margin: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#musicControls button:hover {
+    box-shadow: 0 0 10px rgba(120, 180, 255, 0.6);
+}
+
+#musicLabel {
+    color: white;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    opacity: 0.8;
+}
+
+.glow-title {
+    color: white;
+    font-family: Syncopate, Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+
+    /* base glow */
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #aabfff,
+        0 0 20px #6a8cff;
+
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #aabfff,
+            0 0 20px #6a8cff;
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #88aaff,
+            0 0 35px #4d6fff;
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #aabfff,
+            0 0 20px #6a8cff;
+    }
+}
